@@ -62,6 +62,8 @@ static void ttysend(const Arg *);
 void kscrollup(const Arg *);
 void kscrolldown(const Arg *);
 
+static void changealpha(const Arg *);
+
 /* config.h for applying patches and the configuration. */
 #include "config.h"
 
@@ -316,6 +318,20 @@ zoomabs(const Arg *arg)
 	cresize(0, 0);
 	redraw();
 	xhints();
+}
+
+void
+changealpha(const Arg *arg)
+{
+	if ((alpha > 0 && arg->f <0) || (alpha < 1 && arg->f >0))
+		alpha += arg->f;
+	if (alpha < 0)
+		alpha = 0;
+	if (alpha > 1)
+		alpha = 1;
+
+	xloadcols();
+	redraw();
 }
 
 void

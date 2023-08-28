@@ -9,7 +9,7 @@ static char *font = "JetBrainsMono NF:pixelsize=32:antialias=true:autohint=true"
 static char *font2[] = {
 	"Noto Color Emoji:pixelsize=32:antialias=true:autohint=true",
 };
-static int borderpx = 2;
+static int borderpx = 5;
 
 /*
  * What program is execed by st depends of these precedence rules:
@@ -19,7 +19,7 @@ static int borderpx = 2;
  * 4: value of shell in /etc/passwd
  * 5: value of shell in config.h
  */
-static char *shell = "/bin/sh";
+static char *shell = "/bin/zsh";
 char *utmp = NULL;
 /* scroll program: to enable use a string like "scroll" */
 char *scroll = NULL;
@@ -209,6 +209,8 @@ static Shortcut shortcuts[] = {
 	{ TERMMOD,              XK_Num_Lock,    numlock,        {.i =  0} },
 	{ MODKEY|ShiftMask,     XK_K,           kscrollup,      {.i = -1} },
 	{ MODKEY|ShiftMask,     XK_J,           kscrolldown,    {.i = -1} },
+	{ MODKEY,               XK_a,           changealpha,    {.f = -0.05}},
+	{ MODKEY,               XK_s,           changealpha,    {.f = +0.05}},
 };
 
 /*
