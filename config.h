@@ -5,9 +5,9 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "JetBrainsMono NF:pixelsize=32:antialias=true:autohint=true";
+static char *font = "JetBrainsMono NF:pixelsize=22:antialias=true:autohint=true";
 static char *font2[] = {
-	"Noto Color Emoji:pixelsize=32:antialias=true:autohint=true",
+	"Noto Color Emoji:pixelsize=22:antialias=true:autohint=true",
 };
 static int borderpx = 5;
 
@@ -97,7 +97,7 @@ char *termname = "st-256color";
 unsigned int tabspaces = 8;
 
 /* bg opacity */
-float alpha = 0.8;
+float alpha = 0.7;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
